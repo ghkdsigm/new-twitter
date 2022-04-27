@@ -16,28 +16,28 @@
       <div class="bg-gray-300 h-48 relative flex-none">
         <img src="http://picsum.photos/600" class="w-full h-48 object-cover" />
         <!-- 프로피 이미지 -->
-        <div class="border-4 border-white bg-gray-100 w-28 h-28 rounded-full absolute -bottom-14 left-2">
+        <div class="border-4 border-white bg-gray-100 lg:w-36 lg:h-36 w-28 h-28 rounded-full absolute -bottom-14 lg:left-4 left-2">
           <img src="../assets/jm.jpg" class="w-full h-full rounded-full opacity-90 hover:opacity-100 cursor-pointer" />
         </div>
       </div>
       <!-- 프로필 편집 버튼 -->
-      <div class="text-right mt-2 mr-2 mb-10 relative">
+      <div class="text-right mt-3 mr-3 mb-7 relative">
         <div>
-          <button class="border text-sm border-primary text-primary px-3 py-2 hover:bg-blue-50 font-bold rounded-full">프로필 수정</button>
+          <button class="border text-sm border-primary text-primary px-3 py-2 hover:bg-blue-50 dark:hover:bg-gray-800 font-medium rounded-full"><i class="fa-solid fa-wrench"></i> 프로필 수정</button>
         </div>
       </div>
       <!-- 유저정보 -->
-      <div class="mx-3">
+      <div class="mx-3 lg:ml-5">
         <div class="font-extrabold text-lg dark:text-white">dobookim.com</div>
         <div class="text-gray dark:text-gray-400">@dubookim_jm</div>
         <div>
           <span class="text-gray"><i class="far fa-calendar"></i> 가입일 : </span>
-          <span class="text-gray">2020년 11월 12일</span>
+          <span class="font-medium dark:text-gray-400">2020년 11월 12일</span>
         </div>
         <div>
-          <span class="font-bold mr-1 dark:text-gray-400">222</span>
+          <span class="font-medium mr-1 dark:text-gray-400">222</span>
           <span class="text-gray mr-3">팔로우 중</span>
-          <span class="font-bold mr-1 dark:text-gray-400">333</span>
+          <span class="font-medium mr-1 dark:text-gray-400">333</span>
           <span class="text-gray">팔로워</span>
         </div>
       </div>

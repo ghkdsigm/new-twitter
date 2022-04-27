@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center space-y-4 justify-center h-screen pb-20">
+  <div class="flex flex-col items-center space-y-4 justify-center h-screen pb-20 mx-auto">
     <i :class="`fab fa-twitter text-4xl text-primary ${loading ? 'animate-bounce' : ''}`"></i>
     <span class="text-2xl font-bold dark:text-white text-center pb-2"><span class="text-xl font-light">승현이의 트위터</span> <br/> 회원가입</span>
     <input v-model="username" type="text" class="rounded-full w-96 px-4 py-3 border border-gray-300 dark:border-gray-400 focus:ring-2 focus:border-primary focus:outline-none dark:bg-black dark:text-white" placeholder="아이디" />
