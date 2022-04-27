@@ -5,7 +5,7 @@
       <div class="flex flex-col items-center lg:items-start">
         <!--트위터 로고-->
         <router-link to="/">
-          <i class="fab fa-twitter text-3xl text-primary hover:text-dark lg:ml-4 mb-3"><span class="ml-5 text-lg hidden lg:inline-block">승현이의 트위터</span></i>
+          <i class="fab fa-twitter text-3xl text-primary hover:text-dark lg:ml-4 mb-3"><span class="ml-5 text-lg hidden lg:inline-block align-text-top">승현이의 트위터</span></i>
         </router-link>
 
         <!--사이드메뉴-->
