@@ -51,7 +51,7 @@
                     <span class="text-gray-500 dark:text-gray-400">2011년 10월</span>
                 </div>
             </div>
-            <div class="flex-1 overflow-y-auto">
+            <div class="flex-1 overflow-y-auto lg:pl-3 lg:pr-3">
                 <!--채팅내용 마이채팅-->
                 <div class="text-right px-3 py-3 mt-2 mb-2">
                     <span class="bg-primary dark:bg-blue-700 text-white px-4 py-2 text-lg rounded-full">메시지</span>
@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <!--채팅내용 상대방 채팅-->
-                <div class="text-left px-3 py-3 py-3 mt-2 mb-2" v-for="chat in 5" :key="chat">
+                <div class="text-left px-3 py-3 mt-2 mb-2" v-for="chat in 5" :key="chat">
                     <span class="bg-gray-100 dark:bg-gray-300 px-4 py-2 text-lg rounded-full">메시지</span>
                     <div class="mt-3 text-xs text-gray-500 dark:text-gray-400">
                         2021년 1월 29일 오전 1:05

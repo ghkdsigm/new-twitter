@@ -1,6 +1,6 @@
 <template>
     <!--메인파트-->
-    <div class="flex-1 border-r border-gray-100 dark:border-gray-700 overflow-y-auto" :class="isDark ? 'dark' : ''">
+    <div class="flex-1 border-r border-gray-100 dark:border-gray-700 overflow-y-auto"> <!--:class="isDark ? 'dark' : ''"-->
         <div class="flex flex-col">
         <!--페이지타이틀-->
         <div class="border-b border-gray-100 dark:border-gray-700 px-3 py-2 font-bold text-lg relative dark:text-white">
