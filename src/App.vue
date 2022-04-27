@@ -34,13 +34,13 @@
 
       <!--프로필 버튼-->
       <div class="lg:pr-3 mb-3">
-          <button class="hidden lg:flex mt-3 px-2 py-1 w-full h-12 rounded-full hover:bg-blue-50  items-center">
+          <button class="hidden lg:flex mt-3 px-2 py-1 w-full h-12 rounded-full hover:bg-blue-50  dark:hover:bg-gray-800 items-center">
           <img src="http://picsum.photos/100" class="w-10 h-10 rounded-full">
           <div class="lg:ml-2 hidden lg:block">
-            <div class="text-sm font-bold">hsh.com</div>
-            <div class="text-xs text-gray-500 text-left">@hsh</div>
+            <div class="text-sm font-bold dark:text-white">hsh.com</div>
+            <div class="text-xs text-gray-500 text-left dark:text-gray-400">@hsh</div>
           </div>
-          <i class="fas fa-ellipsis-h fa-fw text-xl ml-auto  hidden lg:block"></i>
+          <i class="fas fa-ellipsis-h fa-fw text-xl ml-auto  hidden lg:block dark:text-gray-400"></i>
           </button>
           <div class="lg:hidden flex justify-center">
             <img src="http://picsum.photos/100" class="w-10 h-10 rounded-full cursor-pointer hover:opacity-80" />          

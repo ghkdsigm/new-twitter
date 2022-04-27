@@ -31,7 +31,7 @@
         <div class="font-extrabold text-lg dark:text-white">gggg.com</div>
         <div class="text-gray dark:text-gray-400">@gggg</div>
         <div>
-          <span class="text-gray"><i class="far fa-calender"></i> 가입일 : </span>
+          <span class="text-gray"><i class="far fa-calendar"></i> 가입일 : </span>
           <span class="text-gray">2020년 11월 12일</span>
         </div>
         <div>
