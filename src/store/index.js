@@ -5,11 +5,15 @@ const store = createStore({
   state() {
     return {
       darkmode: false,
+      user: ''
     }
   },
   mutations: {
     changeMessage (state, payload) {
         state.darkmode = payload
+    },
+    SET_USER(state, user){
+      state.user = user
     }
   },
   actions:{

@@ -35,7 +35,7 @@
       </div>
 
       <!--프로필 버튼-->
-      <div class="lg:pr-3 mb-3">
+      <div class="lg:pr-3 mb-3 relative" @click="showProfileDropdown = true">
           <button class="hidden lg:flex mt-3 px-2 py-1 w-full h-12 rounded-full hover:bg-blue-50  dark:hover:bg-gray-800 items-center">
           <img src="http://picsum.photos/100" class="w-10 h-10 rounded-full">
           <div class="lg:ml-2 hidden lg:block">
@@ -54,17 +54,48 @@
     <div class="flex-1 flex h-screen">
       <router-view></router-view>
     </div>
+
+    <!-- 프로필 드롭다운 메뉴 -->
+    <div class="absolute bottom-20 shadow rounded-lg w-60 bg-white dark:bg-gray-800" v-if="showProfileDropdown">
+      <button class="hover:bg-gray-200 dark:hover:bg-gray-700 border-b border-gray-300 dark:border-gray-600 flex p-3 w-full items-center">
+        <img src="http://picsum.photos/200" class="w-10 h-10 rounded-full" />
+        <div class="ml-2">
+          <div class="font-bold text-sm dark:text-white">hsh.com</div>
+          <div class="text-left text-gray-500 text-sm dark:text-gray-400">@hsh</div>
+        </div>
+        <i class="fas fa-solid fa-x text-red-500 ml-auto"  @click="showProfileDropdown = false"></i>
+        <!-- <i class="fas fa-check text-primary ml-auto" ></i> -->
+      </button>
+      <button class="p-3 hover:bg-gray-200 dark:hover:bg-gray-700 dark:text-white  w-full text-center text-sm" @click="onLogout">계정 로그아웃</button>
+    </div>
+
+    <!-- 트윗 모달 팝업 -->
+    <tweet-modal v-if="showTweetModal" @close-modal="showTweetModal = false"></tweet-modal>
   </div>
 </template>
 
 <script>
-import { ref,onBeforeMount,onMounted } from 'vue'
+import { ref,onBeforeMount,onMounted, computed } from 'vue'
 import { useStore } from 'vuex'
 import router from '../router'
+import { auth } from '../firebase'
+import TweetModal from '../components/TweetModal.vue'
 
-export default {
+export default {    
+  components: { TweetModal },
   setup(){
     const routes = ref([])
+    //드롭다운
+    const showProfileDropdown = ref(false)
+    const showTweetModal = ref(false)
+    const currentUser = computed(() => store.state.user)
+    const onLogout = async () => {
+      await auth.signOut()
+      store.commit('SET_USER', null)
+      await router.replace('/login')
+    }
+    
+    //다크모드
     //const isDark = ref(true)
     const store = useStore()
     let isDark = localStorage.getItem('darkMode') == 'true'
@@ -72,7 +103,8 @@ export default {
     let changeDark = localStorage.getItem('changeDark') == 'true'
 
     onBeforeMount(()=>{
-      routes.value = router.options.routes
+      //routes.value = router.options.routes
+      routes.value = router.options.routes.filter((route) => route.meta.isMenu == true)
     });
     onMounted(()=>{
       let set = store.state.darkmode;
@@ -91,10 +123,16 @@ export default {
       routes,
       isDark,
       isShow,
-      changeDark
+      changeDark, 
+      showProfileDropdown, 
+      onLogout, 
+      currentUser, 
+      router, 
+      showTweetModal
     }
   },  
   methods:{
+    // 다크모드
     toggleDarkMode(){
         this.isDark = !this.isDark;
         this.isShow = !this.isShow;
