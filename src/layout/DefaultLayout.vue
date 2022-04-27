@@ -28,8 +28,8 @@
         <!--다크모드-->
         <div class="w-full lg:pr-3 flex justify-center mt-7">
             <button type="button" class="px-2 mb-1" @click="toggleDarkMode" :class="this.$store.state.darkmode ? 'dark' : ''">
-                <i class="far fa-sun  border-2 border-gray-800 text-white px-3 py-2 dark:bg-gray-800 rounded-full lg:text-sm text-xl" :class="isDark ? 'hidden' : 'block'"> <span class="hidden lg:inline-block pl-0 lg:pl-1"> 라이트모드</span></i>
-                <i class="far fa-moon  border-2 border-blue-600  text-blue-600 px-3 py-2 rounded-full lg:text-sm text-xl" :class="isDark ? 'block' : 'hidden'"> <span class="hidden lg:inline-block pl-0 lg:pl-1"> 다크모드</span></i>
+                <i class="far fa-sun  border-2 border-gray-800 text-white lg:px-5 px-3 py-2 dark:bg-gray-800 rounded-full lg:text-base text-xl" :class="isDark ? 'hidden' : 'block'"> <span class="hidden lg:inline-block pl-0 lg:pl-1"> 라이트모드</span></i>
+                <i class="far fa-moon  border-2 border-blue-600  text-blue-600 lg:px-5 px-3 py-2 rounded-full lg:text-base text-xl" :class="isDark ? 'block' : 'hidden'"> <span class="hidden lg:inline-block pl-0 lg:pl-1"> 다크모드</span></i>
             </button>
         </div>
       </div>

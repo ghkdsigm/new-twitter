@@ -21,7 +21,7 @@
         </div>
       </div>
       <!-- 프로필 편집 버튼 -->
-      <div class="text-right mt-3 mr-3 mb-7 relative">
+      <div class="text-right mt-3 mr-4 mb-7 relative">
         <div>
           <button class="border text-sm border-primary text-primary px-3 py-2 hover:bg-blue-50 dark:hover:bg-gray-800 font-medium rounded-full"><i class="fa-solid fa-wrench"></i> 프로필 수정</button>
         </div>
@@ -43,10 +43,10 @@
       </div>
       <!-- 탭버튼 -->
       <div class="flex justify-between border-b dark:border-gray-700 border-color mt-3">
-          <div class="w-1/4 text-primary border-b border-primary text-center hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer hover:text-primary py-3">트윗</div>
-          <div class="w-1/4 hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer text-gray dark:text-gray-400 py-3 text-center">트윗 및 답글</div>
-          <div class="w-1/4 hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer text-gray dark:text-gray-400 py-3 text-center">미디어</div>
-          <div class="w-1/4 hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer text-gray dark:text-gray-400 py-3 text-center">마음에 들어요</div>
+          <div class="w-1/4 text-primary border-b border-primary text-center hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer  hover:text-primary py-3 font-medium">트윗</div>
+          <div class="w-1/4 hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer text-gray-900 dark:text-gray-400 py-3 text-center font-light">트윗 및 답글</div>
+          <div class="w-1/4 hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer text-gray-900 dark:text-gray-400 py-3 text-center font-light">미디어</div>
+          <div class="w-1/4 hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer text-gray-900 dark:text-gray-400 py-3 text-center font-light">마음에 들어요</div>
       </div>
       <!-- 트윗들 -->
       <div class="overflow-y-auto">

@@ -18,7 +18,7 @@
             <div class="ml-3 flex-1 flex flex-col">
                 <textarea class="w-full text-xl font-thin focus:outline-none mb-3 resize-none dark:bg-black dark:text-white" placeholder="무슨 일이 일어나고 있나요?"></textarea>
                 <div class="text-right">
-                    <button class="bg-primary text-white text-sm font-bold px-4 py-1 rounded-full hover:bg-dark">트윗</button>
+                    <button class="bg-primary text-white text-base font-medium px-4 py-1 rounded-full hover:bg-dark">트윗</button>
                 </div>
             </div>
         </div>
