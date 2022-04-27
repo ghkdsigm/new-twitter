@@ -1,7 +1,7 @@
 <template>
   <div class="flex h-screen container mx-auto dark:bg-black" :class="this.$store.state.darkmode ? 'dark' : ''">
     <!--사이드섹션-->
-    <div class="w-20 lg:w-1/4 pt-5 lg:ml-10 flex flex-col justify-between border-r border-gray-200 dark:border-gray-700">
+    <div class="w-20 lg:w-1/5 pt-5 lg:ml-10 flex flex-col justify-between border-r border-gray-200 dark:border-gray-700">
       <div class="flex flex-col items-center lg:items-start">
         <!--트위터 로고-->
         <router-link to="/">
@@ -9,17 +9,17 @@
         </router-link>
 
         <!--사이드메뉴-->
-        <div class="flex flex-col items-start space-y-1">
-          <router-link :to="route.path" class="hover:text-primary hover:bg-blue-50 dark:hover:bg-gray-800 px-4 py-2 rounded-full  cursor-pointer dark:text-white" v-for="route in routes" :key="route">
+        <div class="flex flex-col items-start space-y-3">
+          <router-link :to="route.path" class="hover:text-primary hover:bg-blue-50 dark:hover:bg-gray-800 px-4 py-2 rounded-full  cursor-pointer dark:text-gray-300" v-for="route in routes" :key="route">
             <i :class="route.icon"></i>
-            <span class="ml-5 text-lg hidden lg:inline-block">{{route.title}}</span>
+            <span class="ml-5 text-xl hidden lg:inline-block">{{route.title}}</span>
           </router-link>
           
         </div>
         <!--트위터 버튼-->
         <div class="w-full lg:pr-3 flex justify-center">
             <button class="mt-3 bg-primary text-white lg:w-full w-12 h-12 rounded-full hover:bg-dark">
-              <span class="hidden lg:inline-block">트윗</span>
+              <span class="hidden lg:inline-block text-lg">트윗</span>
               <i class="fas fa-plus lg:hidden"></i>
             </button>
         </div>

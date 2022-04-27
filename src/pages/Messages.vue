@@ -1,7 +1,7 @@
 <template>
   <div class="flex-1 flex">
       <!--채팅리스트-->
-      <div class="w-2/5 border-r border-gray-100 overflow-y-auto">
+      <div class="w-2/5 border-r border-gray-100 dark:border-gray-700 overflow-y-auto">
       <div class="flex flex-col">
         <div class="p-3 font-bold text-lg border-b border-gray-100 dark:text-white dark:border-gray-700 h-14">쪽지</div>
         <div class="flex cursor-pointer px-3 py-4 dark:bg-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600 border-b border-gray-100 dark:border-gray-700 bg-gray-200">

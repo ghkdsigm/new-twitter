@@ -15,11 +15,11 @@
         <!--트위팅섹션-->
         <div class="flex px-3 py-3 border-b-8 border-gray-100 dark:border-gray-700">
             <img src="http://picsum.photos/200" class="w-10 h-10 rounded-full hover:opacity-80 cursor-pointer" />
-            <div class="ml-2 flex-1 flex flex-col">
-            <textarea class="w-full text-lg font-bold focus:outline-none mb-3 resize-none dark:bg-black dark:text-white" placeholder="무슨 일이 일어나고 있나요?"></textarea>
-            <div class="text-right">
-                <button class="bg-primary text-white text-sm font-bold px-4 py-1 rounded-full hover:bg-dark">트윗</button>
-            </div>
+            <div class="ml-3 flex-1 flex flex-col">
+                <textarea class="w-full text-xl font-thin focus:outline-none mb-3 resize-none dark:bg-black dark:text-white" placeholder="무슨 일이 일어나고 있나요?"></textarea>
+                <div class="text-right">
+                    <button class="bg-primary text-white text-sm font-bold px-4 py-1 rounded-full hover:bg-dark">트윗</button>
+                </div>
             </div>
         </div>
         <!--트위트-->

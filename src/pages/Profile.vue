@@ -8,8 +8,8 @@
           <i class="fas fa-arrow-left text-primary p-3 rounded-full hover:bg-blue-50"></i>
         </button>
         <div>
-          <div class="font-extrabold text-lg">gggg.com</div>
-          <div class="text-xs text-gray">333 트윗</div>
+          <div class="font-extrabold text-lg dark:text-white">gggg.com</div>
+          <div class="text-xs text-gray dark:text-gray-400">333 트윗</div>
         </div>
       </div>
       <!-- 백그라운드이미지 -->
