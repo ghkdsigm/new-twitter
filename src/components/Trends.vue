@@ -17,8 +17,8 @@
                 <div class="flex">
                 <div class="flex-1 flex-col">
                     <div class="text-gray-500">대한민국에서 트렌드 중</div>
-                    <div class="text-lg font-bold dark:text-white">러블리즈</div>
-                    <div class="text-gray-500">222 트윗</div>
+                    <div class="text-lg font-bold dark:text-white">김정민</div>
+                    <div class="text-gray-500">1,141,222 트윗</div>
                 </div>
                 <i class="fas fa-ellipsis-h text-gray-500"></i>
                 </div>
@@ -36,10 +36,10 @@
             </div>
             <div class="border-b border-gray-100 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-transparent px-4 py-2 cursor-pointer" v-for="trend in 3" :key="trend">
                 <div class="flex items-center">            
-                    <img src="http://picsum.photos/200" class="w-12 h-12 rounded-full mr-2">             
+                    <img src="../assets/jm.jpg" class="w-12 h-12 rounded-full mr-2">             
                 <div class="flex-1 flex-col">
-                    <div class="text-lg font-bold dark:text-white">박주미</div>
-                    <div class="text-gray-500 text-sm">@talent_park</div>
+                    <div class="text-lg font-bold dark:text-white">김정민</div>
+                    <div class="text-gray-500 text-sm">@dubookim_jm</div>
                 </div>
                 <div>
                     <button class="border-2 border-primary hover:bg-blue-100 px-4 py-1 text-sm rounded-full text-primary dark:bg-white dark:text-black dark:border-transparent dark:hover:bg-opacity-90">팔로우</button>

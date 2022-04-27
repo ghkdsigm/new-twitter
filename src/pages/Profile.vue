@@ -17,7 +17,7 @@
         <img src="http://picsum.photos/600" class="w-full h-48 object-cover" />
         <!-- 프로피 이미지 -->
         <div class="border-4 border-white bg-gray-100 w-28 h-28 rounded-full absolute -bottom-14 left-2">
-          <img src="http://picsum.photos/100" class="w-full h-full rounded-full opacity-90 hover:opacity-100 cursor-pointer" />
+          <img src="../assets/jm.jpg" class="w-full h-full rounded-full opacity-90 hover:opacity-100 cursor-pointer" />
         </div>
       </div>
       <!-- 프로필 편집 버튼 -->
@@ -28,8 +28,8 @@
       </div>
       <!-- 유저정보 -->
       <div class="mx-3">
-        <div class="font-extrabold text-lg dark:text-white">gggg.com</div>
-        <div class="text-gray dark:text-gray-400">@gggg</div>
+        <div class="font-extrabold text-lg dark:text-white">dobookim.com</div>
+        <div class="text-gray dark:text-gray-400">@dubookim_jm</div>
         <div>
           <span class="text-gray"><i class="far fa-calendar"></i> 가입일 : </span>
           <span class="text-gray">2020년 11월 12일</span>
