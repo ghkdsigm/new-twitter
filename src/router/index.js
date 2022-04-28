@@ -6,6 +6,7 @@ import Messages from '../pages/Messages.vue'
 import Profile from '../pages/Profile.vue'
 import Register from '../pages/Register.vue'
 import Login from '../pages/Login.vue'
+import NotFound from './NotFound.vue'
 //import Tweet from '../pages/Tweet.vue'
 
 const routes = [
@@ -20,7 +21,9 @@ const routes = [
     //{ path: '/tweet/:id', name: 'tweet', component: Tweet, meta: { isMenu: false, layout: 'DefaultLayout', requireAuth: true } },
     { path: '/register', name: 'register', component: Register, meta: { isMenu: false, layout: 'EmptyLayout' } },
     { path: '/login', name: 'login', component: Login, meta: { isMenu: false, layout: 'EmptyLayout' } },
-  
+    {
+      path: "/:pathMatch(.*)*",  name: "notFound", component: NotFound,  meta: { isMenu: false } ,
+    },
 ]
 
 
