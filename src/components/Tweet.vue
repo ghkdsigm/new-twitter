@@ -1,6 +1,6 @@
 <template>
   <!--트위츠-->
-    <div class="flex px-3 py-4 border-b border-gray-100 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 cursor-pointer">
+    <div class="flex px-3 py-4 border-b border-gray-100 dark:border-gray-800 hover:bg-gray-100 dark:bg-opacity-5 transition-all ease-in-out cursor-pointer">
         <img :src="currentUser.profile_image_url" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full hover:opacity-80 cursor-pointer" />
         <div class="flex-1 ml-3 flex flex-col space-y-1">
             <div class="text-sm space-x-1">

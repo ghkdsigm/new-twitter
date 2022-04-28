@@ -3,7 +3,7 @@
     <div class="flex-1 border-r border-gray-100 dark:border-gray-800 overflow-y-auto"> <!--:class="isDark ? 'dark' : ''"-->
         <div class="flex flex-col">
         <!--페이지타이틀-->
-        <div class="sticky top-0 bg-black bg-opacity-70 border-b border-gray-100 dark:border-gray-800 px-3 py-2 font-bold text-lg  dark:text-white">
+        <div class="sticky top-0 bg-white bg-opacity-90 dark:bg-black dark:bg-opacity-70 border-b border-gray-100 dark:border-gray-800 px-3 py-2 font-bold text-xl  dark:text-white">
             홈  
             <!-- <span class="absolute right-1">
                 <button type="button" class="px-2 mb-1" @click="toggleDarkMode">

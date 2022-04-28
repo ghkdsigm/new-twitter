@@ -3,13 +3,13 @@
     <!-- 프로필섹션 -->
     <div class="flex-1 flex flex-col border-r border-color dark:border-gray-800">
       <!-- 타이틀 -->
-      <div class="sticky top-0 bg-black bg-opacity-70  px-3 py-1 flex border-b border-color dark:border-gray-800">
+      <div class="sticky top-0 bg-white bg-opacity-90 dark:bg-black dark:bg-opacity-70  px-3 py-1 flex border-b border-color dark:border-gray-800">
         <button class="mr-4">
           <i class="fas fa-arrow-left text-primary p-3 rounded-full hover:bg-blue-50"></i>
         </button>
         <div>
-          <div class="font-extrabold text-lg dark:text-white">gggg.com</div>
-          <div class="text-xs text-gray dark:text-gray-400">333 트윗</div>
+          <div class="font-extrabold text-xl dark:text-white">gggg.com</div>
+          <div class="text-sm text-gray dark:text-gray-400">333 트윗</div>
         </div>
       </div>
       <!-- 백그라운드이미지 -->
@@ -43,10 +43,10 @@
       </div>
       <!-- 탭버튼 -->
       <div class="flex justify-between border-b dark:border-gray-800 border-color mt-3">
-          <div class="w-1/4 text-primary border-b border-primary text-center hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer  hover:text-primary py-3 font-medium">트윗</div>
-          <div class="w-1/4 hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer text-gray-900 dark:text-gray-400 py-3 text-center font-light">트윗 및 답글</div>
-          <div class="w-1/4 hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer text-gray-900 dark:text-gray-400 py-3 text-center font-light">미디어</div>
-          <div class="w-1/4 hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer text-gray-900 dark:text-gray-400 py-3 text-center font-light">마음에 들어요</div>
+          <div class="w-1/4 transition-all ease-in-out text-primary border-b border-primary text-center hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer  hover:text-primary py-3 font-medium">트윗</div>
+          <div class="w-1/4 transition-all ease-in-out hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer text-gray-900 dark:text-gray-400 py-3 text-center font-light">트윗 및 답글</div>
+          <div class="w-1/4 transition-all ease-in-out hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer text-gray-900 dark:text-gray-400 py-3 text-center font-light">미디어</div>
+          <div class="w-1/4 transition-all ease-in-out hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer text-gray-900 dark:text-gray-400 py-3 text-center font-light">마음에 들어요</div>
       </div>
       <!-- 트윗들 -->
       <div class="overflow-y-auto">

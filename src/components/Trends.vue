@@ -2,8 +2,8 @@
     <div class="hidden lg:block lg:w-2/5 px-4 py-2">
         <!--트렌드검색-->
         <div class="relative mb-5">
-            <input type="text" placeholder="트위터검색" class="pl-10 rounded-full w-full p-2 bg-gray-100 dark:bg-gray-700 text-sm dark:text-white focus:ring-1 focus:ring-primary focus:bg-white focus:outline-none" />
-            <i class="fas fa-search absolute left-0 mt-2 ml-3 text-base text-gray-500 dark:text-light"></i>
+            <input type="text" placeholder="트위터검색" class="pl-11 rounded-full w-full p-3 bg-gray-100 dark:bg-gray-700 text-base dark:text-white focus:ring-1 focus:ring-primary focus:bg-white focus:outline-none" />
+            <i class="fas fa-search absolute left-0 mt-3 ml-4 text-base text-gray-500 dark:text-light"></i>
         </div>
         <!--나를위한 트렌드-->
         <div class="w-full rounded-lg bg-gray-100 dark:bg-gray-800 flex flex-col">
@@ -11,7 +11,7 @@
                 <span class="text-xl font-bold dark:text-white">
                 나를 위한 트렌드
                 </span>
-                <i class="fas fa-cog text-lg text-primary text-center hover:bg-blue-50 p-2 rounded-full"></i>
+                <i class="fas fa-cog text-lg text-primary text-center hover:bg-blue-50 dark:hover:bg-opacity-5 p-2 rounded-full"></i>
             </div>
             <div class="border-b border-gray-100 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-transparent px-4 py-2 cursor-pointer" v-for="trend in 3" :key="trend">
                 <div class="flex">
