@@ -1,8 +1,8 @@
 <template>
   <!--노티피케이션-->
-  <div class="flex-1 border-r border-gray-100 dark:border-gray-700 flex flex-col overflow-y-auto">
+  <div class="flex-1 border-r border-gray-100 dark:border-gray-800 flex flex-col overflow-y-auto">
       <!--타이틀-->
-      <div class="p-3 font-bold text-lg border-b border-gray-100 dark:border-gray-700 dark:text-white">알림</div>
+      <div class="sticky top-0 bg-black bg-opacity-70  p-3 font-bold text-lg border-b border-gray-100 dark:border-gray-800 dark:text-white">알림</div>
       <!--알림-->
       <div class="flex flex-col hover:bg-gray-50 dark:bg-transparent p-3 space-y-2 border-gray-100 cursor-pointer" v-for="notification in 23" :key="notification">
           <div class="flex justify-between">

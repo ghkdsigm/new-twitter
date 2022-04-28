@@ -1,9 +1,9 @@
 <template>
    <div class="flex-1 flex">
     <!-- 프로필섹션 -->
-    <div class="flex-1 flex flex-col border-r border-color dark:border-gray-700">
+    <div class="flex-1 flex flex-col border-r border-color dark:border-gray-800">
       <!-- 타이틀 -->
-      <div class="px-3 py-1 flex border-b border-color dark:border-gray-700">
+      <div class="sticky top-0 bg-black bg-opacity-70  px-3 py-1 flex border-b border-color dark:border-gray-800">
         <button class="mr-4">
           <i class="fas fa-arrow-left text-primary p-3 rounded-full hover:bg-blue-50"></i>
         </button>
@@ -15,7 +15,7 @@
       <!-- 백그라운드이미지 -->
       <div class="bg-gray-300 h-48 relative flex-none">
         <img src="http://picsum.photos/600" class="w-full h-48 object-cover" />
-        <!-- 프로피 이미지 -->
+        <!-- 프로필 이미지 -->
         <div class="border-4 border-white bg-gray-100 lg:w-36 lg:h-36 w-28 h-28 rounded-full absolute -bottom-14 lg:left-4 left-2">
           <img src="../assets/jm.jpg" class="w-full h-full rounded-full opacity-90 hover:opacity-100 cursor-pointer" />
         </div>
@@ -42,7 +42,7 @@
         </div>
       </div>
       <!-- 탭버튼 -->
-      <div class="flex justify-between border-b dark:border-gray-700 border-color mt-3">
+      <div class="flex justify-between border-b dark:border-gray-800 border-color mt-3">
           <div class="w-1/4 text-primary border-b border-primary text-center hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer  hover:text-primary py-3 font-medium">트윗</div>
           <div class="w-1/4 hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer text-gray-900 dark:text-gray-400 py-3 text-center font-light">트윗 및 답글</div>
           <div class="w-1/4 hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer text-gray-900 dark:text-gray-400 py-3 text-center font-light">미디어</div>
@@ -50,7 +50,7 @@
       </div>
       <!-- 트윗들 -->
       <div class="overflow-y-auto">
-        <Tweet v-for="tweet in 10" :key="tweet"/>
+        <!-- <Tweet /> -->
       </div>
     </div>
     <!-- 트렌드 섹션 -->
@@ -65,7 +65,7 @@ export default {
   components:{
     Trends,
     Tweet
-  }
+  },
 }
 </script>
 

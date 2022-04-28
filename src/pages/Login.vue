@@ -47,6 +47,7 @@ export default {
                // 유저정보 가져오기
                const doc = await USER_COLEECTION.doc(user.uid).get()
                //console.log(doc.data())
+               // 유저정보 vuex보내기
                store.commit('SET_USER', doc.data())
                router.replace("/") //router.push로 갔을경우 뒤로갔을때 다시 로그인 화면이 뜨기때문에 replace로 처음값을지정
            } catch(e) {

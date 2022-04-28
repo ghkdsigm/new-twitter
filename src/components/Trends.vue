@@ -3,10 +3,10 @@
         <!--트렌드검색-->
         <div class="relative mb-5">
             <input type="text" placeholder="트위터검색" class="pl-10 rounded-full w-full p-2 bg-gray-100 dark:bg-gray-700 text-sm dark:text-white focus:ring-1 focus:ring-primary focus:bg-white focus:outline-none" />
-            <i class="fas fa-search absolute left-0 mt-2 ml-3 text-sm text-light"></i>
+            <i class="fas fa-search absolute left-0 mt-2 ml-3 text-base text-gray-500 dark:text-light"></i>
         </div>
         <!--나를위한 트렌드-->
-        <div class="w-full rounded-lg bg-gray-50 dark:bg-gray-800 flex flex-col">
+        <div class="w-full rounded-lg bg-gray-100 dark:bg-gray-800 flex flex-col">
             <div class="flex items-center justify-between px-3 py-1 border-b border-gray-100 dark:border-gray-700">
                 <span class="text-xl font-bold dark:text-white">
                 나를 위한 트렌드
@@ -28,7 +28,7 @@
             </div>
         </div>
         <!--팔로우 추천-->
-        <div class="mt-5 w-full rounded-lg bg-gray-50 dark:bg-gray-800 flex flex-col">
+        <div class="mt-5 w-full rounded-lg bg-gray-100 dark:bg-gray-800 flex flex-col">
             <div class="items-center justify-between px-3 py-3 border-b border-gray-100 dark:border-gray-700">
                 <span class="text-xl font-bold dark:text-white">
                 팔로우 추천
