@@ -44,6 +44,7 @@ export default {
     const onAddTweet = async () => {
       try {
         await addTweet(tweetBody.value, currentUser.value)
+        alert('트윗이 등록되었습니다!')
         tweetBody.value = ''
         context.emit('close-modal')
       } catch (e) {
