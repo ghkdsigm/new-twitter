@@ -21,7 +21,7 @@
         <div class="w-full lg:pr-3 flex justify-center shadow-[0_15px_30px_-25px_rgba(0,0,0,0.5)] dark:shadow-[0_25px_25px_-25px_rgba(255,255,255,0.5)]">
             <button @click="showTweetModal = true" class="mt-3 transition-all ease-in-out bg-primary text-white lg:w-full lg:h-14 h-10 w-full rounded-full hover:bg-dark">
               <span class="hidden lg:inline-block text-lg">트윗</span>
-              <i class="fas fa-plus lg:hidden text-xl "></i>
+              <i class="fas fa-paper-plane lg:hidden lg:text-xl text-base"></i>
             </button>
         </div>
         <!--다크모드-->
