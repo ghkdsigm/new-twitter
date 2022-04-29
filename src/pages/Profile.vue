@@ -42,15 +42,14 @@
         </div>
       </div>
       <!-- 탭버튼 -->
-      <div class="flex justify-between border-b dark:border-gray-800 border-color mt-3">
-          <div class="w-1/4 transition-all ease-in-out text-primary border-b border-primary text-center hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer  hover:text-primary py-3 font-medium">트윗</div>
-          <div class="w-1/4 transition-all ease-in-out hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer text-gray-900 dark:text-gray-400 py-3 text-center font-light">트윗 및 답글</div>
-          <div class="w-1/4 transition-all ease-in-out hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer text-gray-900 dark:text-gray-400 py-3 text-center font-light">미디어</div>
-          <div class="w-1/4 transition-all ease-in-out hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer text-gray-900 dark:text-gray-400 py-3 text-center font-light">마음에 들어요</div>
+      <div class="flex justify-between mt-3 border-b dark:border-gray-800 border-gray-200">
+          <div @click="currentTab = 'tweet'" :class="`${currentTab == 'tweet' ? 'border-b border-primary text-primary font-medium  dark:text-primary': 'text-gray border-b dark:border-gray-800 border-gray-200'} w-1/3 transition-all ease-in-out text-center hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer hover:text-primary py-3 dark:text-gray-400`">트윗</div>
+          <div @click="currentTab = 'retweet'" :class="`${currentTab == 'retweet' ? 'border-b border-primary text-primary font-medium dark:text-primary ' : 'text-gray border-b dark:border-gray-800 border-gray-200'} w-1/3 transition-all ease-in-out text-center hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer hover:text-primary dark:text-gray-400 py-3`">리트윗</div>
+          <div @click="currentTab = 'like'" :class="`${currentTab == 'like' ? 'border-b border-primary text-primary font-medium dark:text-primary': 'text-gray border-b dark:border-gray-800 border-gray-200'} w-1/3 transition-all ease-in-out text-center hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer hover:text-primary dark:text-gray-400 py-3`">좋아요</div>
       </div>
       <!-- 트윗들 -->
       <div class="overflow-y-auto">
-        <Tweet v-for="tweet in tweets" :key="tweet.id" :currentUser="currentUser" :tweet="tweet" />
+        <Tweet v-for="tweet in currentTab == 'tweet' ? tweets : currentTab == 'retweet' ? reTweets : likeTweets" :key="tweet.id" :currentUser="currentUser" :tweet="tweet" />
       </div>
     </div>
     <!-- 트렌드 섹션 -->
@@ -64,7 +63,7 @@ import Tweet from '../components/Tweet.vue'
 import store from '../store'
 import moment from 'moment'
 import { computed, ref, onBeforeMount } from 'vue'
-import { TWEET_COLEECTION, USER_COLEECTION } from '../firebase'
+import { TWEET_COLEECTION, USER_COLEECTION, RETWEET_COLLECTION, LIKE_COLLECTION } from '../firebase'
 import getTweetInfo from '../utils/getTweetInfo'
 
 export default {
@@ -75,12 +74,16 @@ export default {
   setup(){
     const currentUser = computed(() => store.state.user)
     const tweets = ref([])
+    const reTweets = ref([])
+    const likeTweets = ref([])
+    const currentTab = ref('tweet')
 
     onBeforeMount(() => {
         //const profileUID = route.params.uid ?? currentUser.value.uid
         
         USER_COLEECTION.doc(currentUser.value.uid).onSnapshot((doc) => {
-          profileUser.value = doc.data()
+          //profileUser.value = doc.data()
+          store.commit('SET_USER', doc.data())
         })
 
         //스냅샷 간 변경사항 예제 https://firebase.google.com/docs/firestore/query-data/listen (실시간업데이트수신대기)
@@ -97,12 +100,46 @@ export default {
                 }
             })
         })
+
+        RETWEET_COLLECTION.where('uid', '==', currentUser.value.uid)
+        .orderBy('created_at', 'desc')
+        .onSnapshot((snapshot) => {
+          snapshot.docChanges().forEach(async (change) => {
+            const doc = await TWEET_COLEECTION.doc(change.doc.data().from_tweet_id).get()
+            let tweet = await getTweetInfo(doc.data(), currentUser.value)
+            if (change.type === 'added') {
+              reTweets.value.splice(change.newIndex, 0, tweet)
+            } else if (change.type === 'modified') {
+              reTweets.value.splice(change.oldIndex, 1, tweet)
+            } else if (change.type === 'removed') {
+              reTweets.value.splice(change.oldIndex, 1)
+            }
+          })
+        })
+        LIKE_COLLECTION.where('uid', '==', currentUser.value.uid)
+        .orderBy('created_at', 'desc')
+        .onSnapshot((snapshot) => {
+          snapshot.docChanges().forEach(async (change) => {
+            const doc = await TWEET_COLEECTION.doc(change.doc.data().from_tweet_id).get()
+            let tweet = await getTweetInfo(doc.data(), currentUser.value)
+            if (change.type === 'added') {
+              likeTweets.value.splice(change.newIndex, 0, tweet)
+            } else if (change.type === 'modified') {
+              likeTweets.value.splice(change.oldIndex, 1, tweet)
+            } else if (change.type === 'removed') {
+              likeTweets.value.splice(change.oldIndex, 1)
+            }
+          })
+        })
     })
 
     return {
       currentUser,
+      moment,
       tweets,
-      moment
+      reTweets,
+      likeTweets,
+      currentTab
     }
   }
 }
