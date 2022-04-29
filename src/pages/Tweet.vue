@@ -77,6 +77,7 @@ import CommentModal from '../components/CommentModal.vue'
 import handleRetweet from '../utils/handleRetweet'
 import handleLikes from '../utils/handleLikes'
 import firebase from 'firebase'
+
 export default {
   components: { Trends, CommentModal },
   setup() {
@@ -84,7 +85,9 @@ export default {
     const comments = ref([])
     const currentUser = computed(() => store.state.user)
     const showCommentModal = ref(false)
+
     const route = useRoute()
+    
     const handleDeleteComment = async (comment) => {
       if (confirm('댓글을 삭제하시겠습니까?')) {
         // 댓글 코멘트 삭제
