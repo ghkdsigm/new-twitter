@@ -35,8 +35,8 @@ export default {
     const notifications = ref([])
     onBeforeMount(() => {
       currentUser.value.followings.forEach(async (following) => {
-        const dateFrom = Date.now() - 60 * 60 * 24 * 7 * 1000 // before 7 days
-        // const snapshot = await TWEET_COLEECTION.where('created_at', '>', dateFrom).where('uid', '==', following).orderBy('created_at', 'desc').get()
+        const dateFrom = Date.now() - 60 * 60 * 24 * 7 * 1000 // before 7 days (60초 60분 24시간 곱하기 7은 일주일)
+        // const snapshot = await TWEET_COLEECTION.where('created_at', '>', dateFrom).where('uid', '==', following).orderBy('created_at', 'desc').get() // 최근 1주일 글까지만 나오는 방법
         const snapshot = await TWEET_COLEECTION.where('uid', '==', following).orderBy('created_at', 'desc').get()
         snapshot.docs.forEach(async (doc) => {
           let tweet = await getTweetInfo(doc.data(), currentUser.value)
