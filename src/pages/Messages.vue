@@ -70,7 +70,7 @@
             </div>
         </div>
       </div>
-      <div class="w-3/5 border-r border-gray-100 m-5" v-else>
+      <div class="w-3/5 border-r border-gray-800 m-5" v-else>
         <div class="font-bold text-lg">선택된 사용자가 없습니다.</div>
         <div class="text-gray">사용자를 선택해 주세요.</div>
       </div>
@@ -89,6 +89,7 @@ export default {
     const selectedUser = ref(null)
     const messageBody = ref('')
     const messages = ref([])
+
     onBeforeMount(async () => {
       const snapshot = await USER_COLEECTION.orderBy('created_at', 'desc').get()
       snapshot.docs.forEach((doc) => {
@@ -97,10 +98,13 @@ export default {
         users.value.push(user)
       })
     })
+
     const onSelectUser = async (user) => {
       selectedUser.value = user
+      //내가쓴 메시지
       let snapshot = await MESSAGE_COLLECTION.where('from_uid', '==', currentUser.value.uid).where('to_uid', '==', selectedUser.value.uid).get()
       messages.value = snapshot.docs.map((doc) => doc.data())
+      //상대가 쓴 메시지
       snapshot = await MESSAGE_COLLECTION.where('to_uid', '==', currentUser.value.uid).where('from_uid', '==', selectedUser.value.uid).get()
       snapshot.docs.map((doc) => messages.value.push(doc.data()))
       messages.value = messages.value.sort((a, b) => (a.created_at > b.created_at ? 0 : -1))

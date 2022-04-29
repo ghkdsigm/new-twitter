@@ -70,15 +70,15 @@ export default {
     const showCommentModal = ref(false)
     const onDeleteTweet = async (tweet) => {
       if (confirm('정말로 트윗을 삭제하시겠습니까?')) {
-        // delete tweet
+        // 트윗 삭제
         await TWEET_COLEECTION.doc(tweet.id).delete()
-        // delete comments
+        // 삭제 커멘트
         const commentSnapshot = await COMMENT_COLLECTION.where('from_tweet_id', '==', tweet.id).get()
         commentSnapshot.docs.forEach(async (doc) => await doc.ref.delete())
-        // delete likes
+        // 삭제 좋아요
         const likeSnapshot = await LIKE_COLLECTION.where('from_tweet_id', '==', tweet.id).get()
         likeSnapshot.docs.forEach(async (doc) => await doc.ref.delete())
-        // delete retweets
+        // 삭제 리트윗
         const retweetCollection = await RETWEET_COLLECTION.where('from_tweet_id', '==', tweet.id).get()
         retweetCollection.docs.forEach(async (doc) => await doc.ref.delete())
         // user collection - num_tweets (-1)
