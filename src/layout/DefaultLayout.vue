@@ -93,8 +93,6 @@ export default {
         store.commit('SET_USER', null)
         alert('승현이의 트위터에서 로그아웃 되었습니다.')
         await router.replace('/login')
-      } else{
-        showTweetModal.value = false
       }
     }
 
