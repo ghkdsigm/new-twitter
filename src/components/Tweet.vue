@@ -10,7 +10,9 @@
                 <span class="text-gray-500 lg:text-base text-xs font-light dark:text-gray-400">{{ moment(tweet.created_at).fromNow() }}</span>
             </div>
             <div class="dark:text-white pt-1 pb-1 lg:text-lg font-light">
-                {{ tweet.tweet_body }}
+                <router-link :to="`/tweet/${tweet.id}`">
+                    {{ tweet.tweet_body }}
+                </router-link>
             </div>
             <div class="flex justify-between">
                 <!--코멘트 버튼-->

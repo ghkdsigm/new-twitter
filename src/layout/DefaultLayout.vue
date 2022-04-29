@@ -88,10 +88,14 @@ export default {
     const showProfileDropdown = ref(false)
     const showTweetModal = ref(false)
     const onLogout = async () => {
-      await auth.signOut()
-      store.commit('SET_USER', null)
-      alert('승현이의 트위터에서 로그아웃 되었습니다.')
-      await router.replace('/login')
+      if(confirm('로그아웃 하시겠습니다?')){
+        await auth.signOut()
+        store.commit('SET_USER', null)
+        alert('승현이의 트위터에서 로그아웃 되었습니다.')
+        await router.replace('/login')
+      } else{
+        showTweetModal.value = false
+      }
     }
 
     //유저정보 vuex에서 가져오기
