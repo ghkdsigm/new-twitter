@@ -133,6 +133,9 @@ export default {
 
             } catch (e) {
                 console.log('on add tweet error on homepage:', e)
+            } finally {
+                uploadIMGdata.value = ''
+                uploadIMG.value.src = ''
             }
         } else if (!uploadIMGdata.value){
             try {        
@@ -156,6 +159,9 @@ export default {
 
             } catch (e) {
                 console.log('on add tweet error on homepage:', e)
+            }   finally {
+                uploadIMGdata.value = ''
+                uploadIMG.value.src = ''
             }
         }
         
