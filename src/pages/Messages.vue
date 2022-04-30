@@ -70,7 +70,7 @@
             </div>
         </div>
       </div>
-      <div class="w-3/5 border-r border-gray-800 m-5" v-else>
+      <div class="w-3/5 border-r dark:border-gray-800 m-5" v-else>
         <div class="font-bold text-lg">선택된 사용자가 없습니다.</div>
         <div class="text-gray">사용자를 선택해 주세요.</div>
       </div>
