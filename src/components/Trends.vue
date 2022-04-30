@@ -13,12 +13,12 @@
                 </span>
                 <i class="fas fa-cog text-lg text-primary text-center hover:bg-blue-50 dark:hover:bg-opacity-5 p-2 rounded-full"></i>
             </div>
-            <div class="border-b border-gray-100 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-transparent px-4 py-2 cursor-pointer" v-for="trend in 3" :key="trend">
+            <div class="border-b border-gray-100 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-transparent px-4 py-2 cursor-pointer" v-for="user in users.slice(0,4)" :key="user.uid">
                 <div class="flex">
                 <div class="flex-1 flex-col">
                     <div class="text-gray-500">대한민국에서 트렌드 중</div>
-                    <div class="text-lg font-bold dark:text-white">김정민</div>
-                    <div class="text-gray-500">1,141,222 트윗</div>
+                    <div class="text-lg font-bold dark:text-white">{{user.username}}</div>
+                    <div class="text-gray-500">{{user.num_tweets}} 트윗</div>
                 </div>
                 <i class="fas fa-ellipsis-h text-gray-500"></i>
                 </div>
@@ -34,16 +34,18 @@
                 팔로우 추천
                 </span>
             </div>
-            <div class="border-b border-gray-100 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-transparent px-4 py-2 cursor-pointer" v-for="trend in 3" :key="trend">
-                <div class="flex items-center">            
-                    <img src="../assets/jm.jpg" class="w-12 h-12 object-cover rounded-full mr-2">             
-                <div class="flex-1 flex-col">
-                    <div class="text-lg font-bold dark:text-white">김정민</div>
-                    <div class="text-gray-500 text-sm">@dubookim_jm</div>
-                </div>
-                <div>
-                    <button class="border-2 border-primary hover:bg-blue-100 px-4 py-1 text-sm rounded-full text-primary dark:bg-white dark:text-black dark:border-transparent dark:hover:bg-opacity-90">팔로우</button>
-                </div>
+            <div class="border-b border-gray-100 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-transparent px-4 py-2 cursor-pointer" v-for="user in users.slice(2)" :key="user.uid">
+                <div class="flex items-center">     
+                    <router-link :to="`/profile/${user.uid}`">
+                       <img :src="user.profile_image_url" class="w-12 h-12 object-cover rounded-full mr-2">
+                    </router-link> 
+                    <div class="flex-1 flex-col">
+                        <div class="text-lg font-bold dark:text-white">{{user.username}}</div>
+                        <div class="text-gray-500 text-sm">{{user.email}}</div>
+                    </div>
+                    <div>
+                        <button class="border-2 border-primary hover:bg-blue-100 px-4 py-1 text-sm rounded-full text-primary dark:bg-white dark:text-black dark:border-transparent dark:hover:bg-opacity-90">팔로우</button>
+                    </div>
                 </div>
             </div>
             <div class="px-4 py-4">
@@ -54,8 +56,30 @@
 </template>
 
 <script>
+import { computed, onBeforeMount, ref } from 'vue'
+import { USER_COLEECTION } from '../firebase'
+import store from '../store'
+import moment from 'moment'
 export default {
+  setup() {
+    const currentUser = computed(() => store.state.user)
+    const users = ref([])  
 
+    onBeforeMount(async () => {
+      const snapshot = await USER_COLEECTION.orderBy('created_at', 'desc').get()
+      snapshot.docs.forEach((doc) => {
+        let user = doc.data()
+        if (user.email === currentUser.value.email) return
+        users.value.push(user)
+      })     
+    })     
+    
+    return {
+      currentUser,
+      users,
+      moment,      
+    }
+  },
 }
 </script>
 

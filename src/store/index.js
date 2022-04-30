@@ -6,7 +6,8 @@ const store = createStore({
     return {
       darkmode: false,
       user: null,
-      uploadimg: null
+      uploadimg: null,
+      profilecont: null
     }
   },
   mutations: {

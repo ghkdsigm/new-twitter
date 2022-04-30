@@ -40,10 +40,10 @@
             <input type="text" placeholder="자기소개" class="text-black focus:outline-none" />
           </div>
           <div class="mx-2 my-1 px-2 py-3 border text-gray border-gray-200 rounded hover:border-primary hover:text-primary">
-            <input type="text" placeholder="위치" class="text-black focus:outline-none" />
+            <input type="text" placeholder="별명" class="text-black focus:outline-none" />
           </div>
           <div class="mx-2 my-1 px-2 py-3 border text-gray border-gray-200 rounded hover:border-primary hover:text-primary">
-            <input type="text" placeholder="웹사이트" class="text-black focus:outline-none" />
+            <input type="text" placeholder="사는지역" class="text-black focus:outline-none" />
           </div>
         </div>
       </div>
