@@ -5,7 +5,8 @@ const store = createStore({
   state() {
     return {
       darkmode: false,
-      user: null
+      user: null,
+      uploadimg: null
     }
   },
   mutations: {
@@ -26,6 +27,9 @@ const store = createStore({
     },
     SET_UN_FOLLOW: (state, uid) => {
       state.user.followings = state.user.followings.filter((u) => u !== uid)
+    },
+    SET_PICTURE_IMAGE: (state, image) => {
+      state.uploadimg.upload_image_url = image
     },
   },
   actions:{

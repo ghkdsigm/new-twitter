@@ -1,7 +1,8 @@
 import { TWEET_COLEECTION, USER_COLEECTION } from '../firebase'
 import firebase from 'firebase'
+import store from '../store'
 
-export default (tweetBody, currentUser) => {
+export default (tweetBody, currentUser, uploadIMGdata) => {
   return new Promise(async (resolve, reject) => {
     try {
       const doc = TWEET_COLEECTION.doc()
@@ -13,6 +14,8 @@ export default (tweetBody, currentUser) => {
         num_comments: 0,
         num_retweets: 0,
         num_likes: 0,
+        upload_image_url: ''
+        //upload_image_url: store.state.uploadimg.upload_image_url
       })
 
       await USER_COLEECTION.doc(currentUser.uid).update({

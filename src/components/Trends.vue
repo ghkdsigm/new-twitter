@@ -36,7 +36,7 @@
             </div>
             <div class="border-b border-gray-100 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-transparent px-4 py-2 cursor-pointer" v-for="trend in 3" :key="trend">
                 <div class="flex items-center">            
-                    <img src="../assets/jm.jpg" class="w-12 h-12 rounded-full mr-2">             
+                    <img src="../assets/jm.jpg" class="w-12 h-12 object-cover rounded-full mr-2">             
                 <div class="flex-1 flex-col">
                     <div class="text-lg font-bold dark:text-white">김정민</div>
                     <div class="text-gray-500 text-sm">@dubookim_jm</div>

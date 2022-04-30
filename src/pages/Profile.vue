@@ -17,7 +17,7 @@
         <img :src="profileUser.background_image_url" class="w-full h-48 object-cover" />
         <!-- 프로필 이미지 -->
         <div class="border-4 border-white bg-gray-100 lg:w-36 lg:h-36 w-28 h-28 rounded-full absolute -bottom-14 lg:left-4 left-2">
-          <img :src="profileUser.profile_image_url" class="w-full h-full rounded-full opacity-90 hover:opacity-100 cursor-pointer" />
+          <img :src="profileUser.profile_image_url" class="w-full h-full object-cover rounded-full opacity-90 hover:opacity-100 cursor-pointer" />
         </div>
       </div>
       <!-- 프로필 편집 버튼 -->
@@ -44,10 +44,10 @@
           <span class="font-medium dark:text-gray-400">{{moment(profileUser.created_at).format('YYYY년 MM월 DD일')}}</span>
         </div>
         <div>
-          <span class="font-medium mr-1 dark:text-gray-400">{{profileUser.followings.length}}</span>
+          <!-- <span class="font-medium mr-1 dark:text-gray-400">{{profileUser.followings.length}}</span>
           <span class="text-gray mr-3">팔로우 중</span>
           <span class="font-medium mr-1 dark:text-gray-400">{{profileUser.followers.length}}</span>
-          <span class="text-gray">팔로워</span>
+          <span class="text-gray">팔로워</span> -->
         </div>
       </div>
       <!-- 탭버튼 -->

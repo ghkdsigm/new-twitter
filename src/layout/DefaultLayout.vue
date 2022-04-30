@@ -36,7 +36,7 @@
       <!--프로필 버튼-->
       <div class="lg:pr-3 mb-3 relative" @click="showProfileDropdown = true">
           <button class="transition-all ease-in-out hidden lg:flex mt-3 px-2 py-1 w-full h-12 rounded-full hover:bg-blue-50  dark:hover:bg-gray-800 items-center">
-          <img :src="currentUser.profile_image_url" class="w-10 h-10 rounded-full">
+          <img :src="currentUser.profile_image_url" class="w-10 h-10 object-cover rounded-full">
           <div class="lg:ml-2 hidden lg:block">
             <div class="text-sm font-bold dark:text-white">{{ currentUser.email }}</div>
             <div class="text-sm text-gray-500 text-left dark:text-gray-400">@{{ currentUser.username }}</div>

@@ -7,7 +7,7 @@
 
       <!-- 내용 -->
       <div @click.stop class="inline-block bg-white dark:bg-black rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-xl w-full justify-center" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
-        <div class="border-b border-gray-100 dark:border-gray-700 p-2 flex items-center justify-between">
+        <div class="border-b border-gray-100 dark:border-gray-700 p-2 text-right">
           <button @click="$emit('close-modal')" class="fas fa-times text-primary dark:text-white text-lg p-2 h-10 w-10 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-full"></button>
           <!-- 트윗버튼 -->
           <div class="text-right sm:hidden mr-2">

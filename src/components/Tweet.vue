@@ -14,12 +14,12 @@
                 </div>
                 <!-- 트윗삭제 -->            
                 <button v-if="currentUser.uid === tweet.uid" @click="onDeleteTweet(tweet)">
-                <i class="fas fa-trash text-red-400 p-2 rounded-full hover:bg-red-50"></i>
+                <i class="fas fa-trash text-red-400 p-2 rounded-full hover:bg-red-100 dark:hover:bg-gray-700"></i>
                 </button>
             </div>
             <!-- 트윗내용 -->
             <div class="dark:text-white pt-1 pb-1 lg:text-lg font-light">
-                <router-link :to="`/tweet/${tweet.id}`">{{ tweet.tweet_body }}</router-link>
+                <router-link :to="`/tweet/${tweet.id}`">{{ tweet.tweet_body }} <img :src="tweet.upload_image_url" /> <!--v-if="!tweet.upload_image_url == ''" --></router-link>
             </div>
             <div class="flex justify-between">
                 <!--코멘트 버튼-->

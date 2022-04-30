@@ -28,7 +28,7 @@ export default {
        const router = useRouter()
 
        onMounted(()=>{
-           console.log(store.state.user)
+           //console.log(store.state.user)
        })
 
        const onLogin = async () => {

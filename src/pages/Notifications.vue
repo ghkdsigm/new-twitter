@@ -7,7 +7,7 @@
       <div class="flex flex-col hover:bg-gray-50 dark:bg-transparent p-3 space-y-2 border-gray-100 cursor-pointer" v-for="notification in notifications" :key="notification.id">
           <div class="flex justify-between">
               <router-link :to="`/profile/${notification.uid}`">
-                <img :src="notification.profile_image_url" class="w-10 h-10 rounded-full hover:opacity-80" />
+                <img :src="notification.profile_image_url" class="w-10 h-10 object-cover rounded-full hover:opacity-80" />
               </router-link>
               <i class="fas fa-ellipsis-h text-gray-500 hover:bg-blue-50 hover:text-primary p-2 rounded-full w-10 h-10 flex items-center justify-center"></i>
           </div>
