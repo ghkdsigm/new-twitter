@@ -8,7 +8,7 @@
         <!-- 유저 목록 한개 -->
         <div @click="onSelectUser(user)" class="sticky top-0 bg-white bg-opacity-90 dark:bg-black dark:bg-opacity-70 flex cursor-pointer px-3 py-4 hover:bg-gray-50 dark:hover:bg-transparent border-b border-gray-100 dark:border-gray-800" v-for="user in users" :key="user.id">
           <img :src="user.profile_image_url" class="w-10 h-10 object-cover rounded-full cursor-pointer mr-2" />
-          <div class="flex space-x-2">
+          <div class="lg:flex block lg:space-x-2">
             <div class="font-bold dark:text-white">{{ user.email }}</div>
             <div class="text-gray-500 dark:text-gray-400">@{{ user.username }}</div>
             <div class="text-gray-500">{{ moment(user.created_at).format('M월 DD일') }}</div>
